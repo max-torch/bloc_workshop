@@ -21,7 +21,11 @@ class FirstScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Text("BooleanA and BooleanB"),
+            BlocBuilder<FirstBooleanBloc, bool>(
+              builder: (context, state) {
+                return Text("${state.toString().toUpperCase()} and BooleanB");
+              },
+            ),
             SizedBox(
               height: 20,
             ),
