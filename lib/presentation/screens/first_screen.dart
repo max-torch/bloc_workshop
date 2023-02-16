@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../bloc/first_boolean_bloc.dart';
 import 'second_screen.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -24,7 +26,9 @@ class FirstScreen extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
-                child: Text("Toggle First Boolean Bloc"), onPressed: () {}),
+                child: Text("Toggle First Boolean Bloc"),
+                onPressed: () =>
+                    context.read<FirstBooleanBloc>().add(FirstButtonPressed())),
             SizedBox(
               height: 20,
             ),
