@@ -30,6 +30,12 @@ class SecondScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
+            ElevatedButton(
+              child: Text("Write Data"),
+              onPressed: () => context
+                  .read<SecondBooleanBloc>()
+                  .add(WriteDataButtonPressed()),
+            ),
           ],
         ),
       ),
