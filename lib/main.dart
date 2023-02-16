@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/first_boolean_bloc.dart';
+import 'bloc_observer.dart';
 import 'presentation/screens/first_screen.dart';
 
 void main() {
+  Bloc.observer = SimpleBlocObserver();
   runApp(const MainApp());
 }
 
