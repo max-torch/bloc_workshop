@@ -22,11 +22,12 @@ class FirstScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            BlocBuilder<FirstBooleanBloc, bool>(
-              builder: (context, state) {
-                return Text("${state.toString().toUpperCase()} and BooleanB");
-              },
-            ),
+            Builder(builder: (context) {
+              final stateA = context.watch<FirstBooleanBloc>().state;
+              final stateB = context.watch<SecondBooleanBloc>().state;
+              return Text(
+                  "${stateA.toString().toUpperCase()} and ${stateB.toString().toUpperCase()}");
+            }),
             SizedBox(
               height: 20,
             ),
