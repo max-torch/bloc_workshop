@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/first_boolean_bloc.dart';
 import 'presentation/screens/first_screen.dart';
 
 void main() {
@@ -11,8 +13,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: FirstScreen(),
+    return BlocProvider(
+      create: (context) => FirstBooleanBloc(),
+      child: MaterialApp(
+        home: FirstScreen(),
+      ),
     );
   }
 }
