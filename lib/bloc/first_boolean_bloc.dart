@@ -6,7 +6,8 @@ part 'first_boolean_event.dart';
 class FirstBooleanBloc extends Bloc<FirstBooleanEvent, bool> {
   FirstBooleanBloc() : super(true) {
     on<FirstBooleanEvent>((event, emit) {
-      // TODO: implement event handler
+      final bool toggledState = !state;
+      emit(toggledState);
     });
   }
 }
